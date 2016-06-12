@@ -1,0 +1,14 @@
+server {
+        listen 80;
+        server_name frontend.snorkelboot.vagrant;
+        
+        root /var/www/frontend/;
+        index index.html;
+        
+        # Important for VirtualBox
+        sendfile off;
+        
+        location / {
+            try_files $uri $uri/ =404;
+        }
+    }

@@ -6,6 +6,40 @@
     <link rel="stylesheet" href="/resources/app.min.css">
 </head>
 <body>
-    
+<section class="header">
+    <div class="row">
+        <div class="logo col-3">
+            <span class="sm">de</span>
+            <span>snorkelboot</span>
+        </div>
+        <div class="pager col-3">
+            <span class="active">1</span>
+            <span>2</span>
+            <span>3</span>
+        </div>
+        <div class="give-it-a-try col-3">
+            <button>Ik weet <span class="highlight">het woord</span> al!</button>
+        </div>
+    </div>
+</section>
+<section class="game">
+    <div class="row code">
+        <form>
+            <input type="text" maxlength="1" name="first">
+            <input type="text" maxlength="1" name="second">
+            <input type="text" maxlength="1" name="third">
+            <input type="submit">
+        </form>
+    </div>
+</section>
+<section class="footer">
+    <img class="controls" src="/resources/img/controls.svg">
+    <img class="helm helm-rotate" src="/resources/img/helm.svg">
+</section>
+<video class="livestream" width="640" height="360" controls="false" autoplay="true" muted="true">
+    <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4">
+    <source src="http://clips.vorwaerts-gmbh.de/VfE.webm" type="video/webm">
+    <source src="http://clips.vorwaerts-gmbh.de/VfE.ogv" type="video/ogg">
+</video>
 </body>
 </html>

@@ -46,3 +46,6 @@ doc/
 .ruby-gemset
 .ruby-version
 .rvmrc
+
+# Project
+/project/frontend/resources/app.min.css

@@ -6,6 +6,7 @@
 @yellow: #FDB813;
 @grey: #E3E3E3;
 @darkgrey: #4A4A4A;
+@blue: #003E66;
 
 html {
   box-sizing: border-box;
@@ -125,7 +126,7 @@ div {
 
             &.active {
                 color: @white;
-                background: #4A4A4A;
+                background: @darkgrey;
             }
         }
     }
@@ -161,16 +162,38 @@ div {
 }
 
 .game {
-    .code {
+    .code,
+    .answer {
         text-align: center;
     }
+
+    .code {
+        margin-bottom: 100px;
+    }
+    
+    .answer {
+        form {
+            input {
+                background: rgba(255, 255, 255, 0.20);
+                .transition(e("color 0.3s ease, background 0.3s ease"));
+    
+                &.active,
+                &:focus {
+                    color: @darkgrey;
+                    background: @white;
+                }
+            }
+
+        }
+    }
+
 }
 
 .footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background: #003E66;
+    background: @blue;
     text-align: center;
     height: 227px;
 
@@ -185,8 +208,8 @@ div {
         margin-right: auto;
         left: 0;
         right: 0;
-        top: -140px;
-        height: 280px;
+        top: -160px;
+        height: 320px;
     }
 }
 

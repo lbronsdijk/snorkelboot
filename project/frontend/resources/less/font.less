@@ -1,0 +1,14 @@
+.font-face(BreeSerif, breeserif-regular);
+.font-face(Avenir, avenir-heavy); 
+
+.font-face (@fontname, @fontfile) {
+    @font-face {
+        font-family: @fontname;
+        src: url('/resources/fonts/@{fontfile}.eot');
+        src: url('/resources/fonts/@{fontfile}.eot?#iefix') format('embedded-opentype'),
+             url('/resources/fonts/@{fontfile}.woff2') format('woff2'),
+             url('/resources/fonts/@{fontfile}.woff') format('woff'),
+             url('/resources/fonts/@{fontfile}.ttf')  format('truetype'),
+             url('/resources/fonts/@{fontfile}.svg#svgFontName') format('svg');
+    }
+}

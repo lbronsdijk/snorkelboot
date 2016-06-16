@@ -1,0 +1,289 @@
+@import "reset";
+@import "font";
+@import "animate";
+
+@white: #FFF;
+@yellow: #FDB813;
+@grey: #E3E3E3;
+@darkgrey: #4A4A4A;
+@blue: #003E66;
+@lightblue: #8BACC1;
+@red: #F21600;
+
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+    font-family: "BreeSerif";
+    user-select: none;
+}
+
+.clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+    *zoom: 1;
+}
+
+.border-radius (@radius: 5px) {
+    -webkit-border-radius: @radius;
+       -moz-border-radius: @radius;
+            border-radius: @radius;
+}
+
+.transition (@arguments)
+{
+    -webkit-transition: @arguments;
+       -moz-transition: @arguments;
+        -ms-transition: @arguments;
+         -o-transition: @arguments;
+            transition: @arguments;
+}
+
+form {
+    input {
+        width: 106px;
+        height: 95px;
+        display: inline-block;
+        font-family: "BreeSerif";
+        font-size: 50pt;
+        text-align: center;
+        text-transform: uppercase;
+        color: @darkgrey;
+        background: @white;
+        margin-right: 5px;
+        .border-radius();
+        line-height: 0pt;
+    }
+
+    input[type=submit] {
+        text-indent: -9999px;
+        color: #C5C5C5;
+        background: url("/resources/img/checkmark.svg") no-repeat center center;
+        background-color: @grey;
+        background-size: 60px 50px;
+        .transition(e("background-color 0.3s ease"));
+
+        &:hover {
+            background-color: @yellow;
+        }
+        &:active {
+            background-color: @yellow;
+        }
+    }
+}
+
+div {
+    .clearfix();
+}
+.row {
+    div {
+        float: left;
+    }
+
+    .col-3 {
+        width: 33.3%;
+    }
+}
+
+.header {
+    padding: 80px;
+
+    .logo {
+        font-size: 40pt;
+        color: @white;
+
+        .sm {
+            font-size: 27pt;
+        }
+    }
+
+    .timer {
+        margin-top: 30px;
+        padding: 8px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.20);
+        .border-radius();
+
+        span {
+            display: inline-block;
+            font-size: 30pt;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.10);
+            padding: 5px 25px;
+            padding-bottom: 9px;
+            margin-right: 5px;
+            .border-radius();
+            
+            &:last-of-type {
+                margin-right: 0;
+            }
+
+            &.active {
+                color: @white;
+                background: @darkgrey;
+            }
+        }
+    }
+
+    .pager {
+        padding-top: 7px;
+        text-align: center;
+
+        span {
+            display: inline-block;
+            font-size: 30pt;
+            color: rgba(0, 0, 0, 0.20);
+            background: rgba(255, 255, 255, 0.20);
+            padding: 5px 25px;
+            padding-bottom: 9px;
+            margin-right: 5px;
+            .border-radius();
+            
+            &:last-of-type {
+                margin-right: 0;
+            }
+
+            &.active {
+                color: @white;
+                background: @darkgrey;
+            }
+        }
+    }
+
+    .give-it-a-try {
+        padding-top: 7px;
+        text-align: right;
+
+        button {
+            font-family: "Avenir";
+            font-size: 15pt;
+            text-transform: uppercase;
+            color: @grey;
+            background: @white;
+            padding: 13px 20px;
+            padding-top: 17px;
+            .transition(e("color 0.3s ease, background 0.3s ease"));
+            .border-radius();
+
+            &:hover {
+                background: @yellow;
+                color: @white;
+            }
+            &:active {
+                background: @yellow;
+            }
+
+            .highlight {
+                color: @darkgrey;
+            }
+        }
+    }
+}
+
+.game {
+    .code,
+    .answer {
+        text-align: center;
+    }
+
+    .code {
+        margin-bottom: 100px;
+    }
+    
+    .answer {
+        form {
+            input {
+                background: rgba(255, 255, 255, 0.20);
+                .transition(e("color 0.3s ease, background 0.3s ease"));
+    
+                &.active,
+                &:focus {
+                    color: @darkgrey;
+                    background: @white;
+                }
+            }
+
+        }
+    }
+
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0px 2px 30px 0px rgba(0,0,0,0.20);
+    text-align: center;
+    padding: 125px;
+    z-index: 50;
+    .border-radius();
+
+    span {
+        display: block;
+    }
+
+    .heading {
+        font-size: 50px;
+        color: @blue;
+        margin-bottom: 30px;
+
+        &.error {
+            color: @red;
+        }
+    }
+    .subheading {
+        font-size: 45px;
+        color: @lightblue;
+    }
+
+}
+
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: @blue;
+    text-align: center;
+    height: 227px;
+
+    .controls {
+        margin-top: 70px;
+        height: 90px;
+    }
+
+    .helm {
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        top: -160px;
+        height: 320px;
+    }
+}
+
+.livestream {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+}

@@ -7,6 +7,8 @@
 @grey: #E3E3E3;
 @darkgrey: #4A4A4A;
 @blue: #003E66;
+@lightblue: #8BACC1;
+@red: #F21600;
 
 html {
   box-sizing: border-box;
@@ -106,6 +108,34 @@ div {
         }
     }
 
+    .timer {
+        margin-top: 30px;
+        padding: 8px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.20);
+        .border-radius();
+
+        span {
+            display: inline-block;
+            font-size: 30pt;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.10);
+            padding: 5px 25px;
+            padding-bottom: 9px;
+            margin-right: 5px;
+            .border-radius();
+            
+            &:last-of-type {
+                margin-right: 0;
+            }
+
+            &.active {
+                color: @white;
+                background: @darkgrey;
+            }
+        }
+    }
+
     .pager {
         padding-top: 7px;
         text-align: center;
@@ -188,6 +218,39 @@ div {
     }
 
 }
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0px 2px 30px 0px rgba(0,0,0,0.20);
+    text-align: center;
+    padding: 125px;
+    z-index: 50;
+    .border-radius();
+
+    span {
+        display: block;
+    }
+
+    .heading {
+        font-size: 50px;
+        color: @blue;
+        margin-bottom: 30px;
+
+        &.error {
+            color: @red;
+        }
+    }
+    .subheading {
+        font-size: 45px;
+        color: @lightblue;
+    }
+
+}
+
 
 .footer {
     position: absolute;

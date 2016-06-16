@@ -8,9 +8,16 @@
 <body>
 <section class="header">
     <div class="row">
-        <div class="logo col-3">
-            <span class="sm">de</span>
-            <span>snorkelboot</span>
+        <div class="col-3">
+            <div class="row logo">
+                <span class="sm">de</span>
+                <span>snorkelboot</span>
+            </div>
+            <div class="row timer">
+                <span class="min">12</span>
+                <span class="divider">:</span>
+                <span class="sec">48</span>
+            </div>
         </div>
         <div class="pager col-3">
             <span class="active">1</span>
@@ -45,14 +52,15 @@
         </form>
     </div>
 </section>
+<div class="modal">
+    <span class="heading error">code is juist!</span>
+    <span class="subheading">op naar de volgende</span>
+</div>
 <section class="footer">
     <img class="controls" src="/resources/img/controls.svg">
     <img class="helm helm-rotate" src="/resources/img/helm.svg">
 </section>
-<video class="livestream" width="640" height="360" controls="false" autoplay="true" muted="true">
-    <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4">
-    <source src="http://clips.vorwaerts-gmbh.de/VfE.webm" type="video/webm">
-    <source src="http://clips.vorwaerts-gmbh.de/VfE.ogv" type="video/ogg">
-</video>
+<!-- <img src="http://192.168.254.1:8090/?action=stream" class="livestream"> -->
+<img src="http://kingofwallpapers.com/sea/sea-018.jpg" class="livestream">
 </body>
 </html>

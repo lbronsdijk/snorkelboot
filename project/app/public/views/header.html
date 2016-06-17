@@ -1,0 +1,16 @@
+<section class="header">
+    <div class="row">
+        <div class="col-3">
+            <div class="row logo">
+                <span class="sm">de</span>
+                <span>snorkelboot</span>
+            </div>
+            <ng-include src="'views/timer.html'"></ng-include>
+        </div>
+        <ng-include src="'views/pager.html'"></ng-include>
+        <div class="give-it-a-try col-3">
+            <button ng-click="revealWord()" ng-hide="guessingState == true">Ik weet <span class="highlight">het woord</span> al!</button>
+            <button ng-click="continueGame()" ng-hide="guessingState == false">Oh nee, <span class="highlight">tóch niet</span>...</button>
+        </div>
+    </div>
+</section>

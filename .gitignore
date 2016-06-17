@@ -47,4 +47,4 @@ doc/
 .ruby-version
 .rvmrc
 
-project/app/public/app.min.js
+app.min.js

@@ -22,5 +22,9 @@
     "gulp-less": "^3.1.0",
     "gulp-plumber": "^1.1.0",
     "gulp-watch": "^4.3.6"
+  },
+  "dependencies": {
+    "gulp-rework": "^1.2.0",
+    "gulp-rework-urls": "^1.1.0"
   }
 }

@@ -1,0 +1,12 @@
+server {
+    listen      80;
+    server_name app.snorkelboot.vagrant;
+
+    location / {
+        proxy_pass http://localhost:3000;
+    }
+
+    location ~/\.ht {
+        deny all;
+    }
+}

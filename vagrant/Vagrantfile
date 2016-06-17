@@ -70,5 +70,5 @@ Vagrant.configure(2) do |config|
   # Enable Vagrant Hostmanager plugin. Adds all vhost to your /etc/hosts file.
   config.hostmanager.enabled = true
   config.hostmanager.manage_host = true
-  config.hostmanager.aliases = %w(frontend.snorkelboot.vagrant)
+  config.hostmanager.aliases = %w(frontend.snorkelboot.vagrant app.snorkelboot.vagrant)
 end

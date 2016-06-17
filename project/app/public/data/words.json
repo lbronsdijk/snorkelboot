@@ -1,0 +1,117 @@
+{
+    "games": {
+        "1": {
+            "word": "snorkelboot",
+            "totalChar": 11,
+            "codes": {
+                "B45": {
+                    "part": "snor",
+                    "position": 0
+                },
+                "A05": {
+                    "part": "kel",
+                    "position": 4
+                },
+                "H61": {
+                    "part": "boot",
+                    "position": 7
+                }
+            }
+        },
+        "2": {
+            "word": "wijnhaven",
+            "totalChar": 9,
+            "codes": {
+                "B45": {
+                    "part": "nha",
+                    "position": 3
+                },
+                "A05": {
+                    "part": "ven",
+                    "position": 6
+                },
+                "H61": {
+
+                    "part": "wij",
+                    "position": 0
+                }
+            }
+        },
+        "3": {
+            "word": "noordzeewater",
+            "totalChar": 13,
+            "codes": {
+                "B45": {
+                    "part": "noor",
+                    "position": 0
+                },
+                "A05": {
+                    "part": "water",
+                    "position": 8
+
+                },
+                "H61": {
+                    "part": "dzee",
+                    "position": 4
+                }
+            }
+        },
+        "4": {
+            "word": "zeemeermin",
+            "totalChar": 10,
+            "codes": {
+                "B45": {
+                    "part": "zee",
+                    "position": 0
+                },
+                "A05": {
+                    "part": "meer",
+                    "position": 3
+
+                },
+                "H61": {
+                    "part": "min",
+                    "position": 7
+                }
+            }
+        },
+        "5": {
+            "word": "bruggenbouwer",
+            "totalChar": 13,
+            "codes": {
+                "H61": {
+                    "part": "uwer",
+                    "position": 9
+                },
+                "B45": {
+                    "part": "brug",
+                    "position": 0
+                },
+                "A05": {
+                    "part": "genbo",
+                    "position": 4
+
+                }
+            }
+        },
+        "6": {
+            "word": "varensgast",
+            "totalChar": 10,
+            "codes": {
+                "B45": {
+                    "part": "nsg",
+                    "position": 4
+                },
+                "H61": {
+                    "part": "vare",
+                    "position": 0
+                },
+                "A05": {
+                    "part": "ast",
+                    "position": 7
+
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+<section class="game">
+    <div class="modal">
+        <span class="subheading">Snorkelboot Leaderboard</span>
+        <table>
+            <tr ng-repeat="player in players">
+                <td>{{$index+1}}.</td>
+                <td>{{ player.name }}</td>
+                <td>{{ player.phone }}</td>
+                <td>{{ player.time | formatMillis}}</td>
+            </tr>
+        </table>
+    </div>
+</section>
+<ng-include src="'views/footer.html'"></ng-include>

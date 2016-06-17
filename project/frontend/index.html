@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>De Snorkelboot</title>
+    <link rel="stylesheet" href="/resources/app.min.css">
+</head>
+<body>
+<section class="header">
+    <div class="row">
+        <div class="col-3">
+            <div class="row logo">
+                <span class="sm">de</span>
+                <span>snorkelboot</span>
+            </div>
+            <div class="row timer">
+                <span class="min">12</span>
+                <span class="divider">:</span>
+                <span class="sec">48</span>
+            </div>
+        </div>
+        <div class="pager col-3">
+            <span class="active">1</span>
+            <span>2</span>
+            <span>3</span>
+        </div>
+        <div class="give-it-a-try col-3">
+            <button>Ik weet <span class="highlight">het woord</span> al!</button>
+        </div>
+    </div>
+</section>
+<section class="game">
+    <div class="row code">
+        <form>
+            <input type="text" maxlength="1" name="first">
+            <input type="text" maxlength="1" name="second">
+            <input type="text" maxlength="1" name="third">
+            <input type="submit">
+        </form>
+    </div>
+    <div class="row answer">
+        <form>
+            <input type="text" maxlength="1">
+            <input type="text" class="active" maxlength="1" value="b">
+            <input type="text" class="active" maxlength="1" value="e">
+            <input type="text" class="active" maxlength="1" value="u">
+            <input type="text" maxlength="1">
+            <input type="text" maxlength="1">
+            <input type="text" maxlength="1">
+            <input type="text" maxlength="1">
+            <input type="text" maxlength="1">
+        </form>
+    </div>
+</section>
+<div class="modal">
+<!--     <span class="heading error">code is juist!</span>
+    <span class="subheading">op naar de volgende</span> -->
+    <span class="heading">Alle hens aan dek!</span>
+    <form class="register">
+        <input type="text" name="name" placeholder="Je naam">
+        <input type="text" name="number" placeholder="Je mobiele nummer">
+        <input type="submit">
+    </form>
+</div>
+<section class="footer">
+    <img class="controls" src="/resources/img/controls.svg">
+    <img class="helm helm-rotate" src="/resources/img/helm.svg">
+</section>
+<!-- <img src="http://192.168.254.1:8090/?action=stream" class="livestream"> -->
+<img src="http://kingofwallpapers.com/sea/sea-018.jpg" class="livestream">
+</body>
+</html>

@@ -49,3 +49,4 @@ doc/
 
 # Project
 /project/frontend/resources/app.min.css
+/project/app/public/app.min.js

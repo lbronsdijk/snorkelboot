@@ -41,7 +41,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Get list of players
 app.get('/api/players', function(req, res, next) {
-    var query = Players.find().sort({'time': -1});
+    var query = Players.find().sort({'time': 'asc'});
 
     query.exec(function(err, players) {
         if (err) return next(err);

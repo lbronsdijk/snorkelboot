@@ -20,6 +20,7 @@ angular.module('snorkelboot')
         $scope.currentTime = false;
         $scope.guessingState = false;
         $scope.succes = 0;
+        $scope.blacklist = [];
 
         wordsFactory.get(function (data) {
             $scope.gameData = data.games[gameNumber];
@@ -68,52 +69,66 @@ angular.module('snorkelboot')
             code = code.toUpperCase();
 
             if ($scope.gameData.codes[code]) {
-                var wordPartObject   = $scope.gameData.codes[code];
-                var wordPartPosition = wordPartObject.position;
-                var wordPartPart     = wordPartObject.part;
-                var wordPartLength   = wordPartPart.length;
+                if ($scope.blacklist.indexOf(code) === -1) {
+                    var wordPartObject   = $scope.gameData.codes[code];
+                    var wordPartPosition = wordPartObject.position;
+                    var wordPartPart     = wordPartObject.part;
+                    var wordPartLength   = wordPartPart.length;
 
-                for (var i = 0; i < wordPartLength; i++) {
-                    $scope.answerInputs[wordPartPosition].class = "active";
-                    $scope.answerInputs[wordPartPosition].value = wordPartPart[i];
-                    $scope.answerInputs[wordPartPosition].disabled = true;
+                    for (var i = 0; i < wordPartLength; i++) {
+                        $scope.answerInputs[wordPartPosition].class = "active";
+                        $scope.answerInputs[wordPartPosition].value = wordPartPart[i];
+                        $scope.answerInputs[wordPartPosition].disabled = true;
 
-                    wordPartPosition++;
-                }
+                        wordPartPosition++;
+                    }
 
-                $scope.succes++;
+                    $scope.succes++;
+                    $scope.blacklist.push(code);
 
-                if ($scope.succes === 3) {
-                    $scope.stopTimer();
-                    $scope.timerRunning = false;
+                    if ($scope.succes === 3) {
+                        $scope.stopTimer();
+                        $scope.timerRunning = false;
 
-                    $scope.user.time = $scope.currentTime;
+                        $scope.user.time = $scope.currentTime;
 
-                    Players.save($scope.user,
-                        function() {
-                        },
-                        function(response) {
-                            console.log(response);
+                        Players.save($scope.user,
+                            function() {
+                            },
+                            function(response) {
+                                console.log(response);
+                            });
+
+                        ModalService.showModal({
+                            templateUrl: "views/modal.html",
+                            controller: "modalCtrl",
+                            inputs: {
+                                heading: "woord geraden!",
+                                subheading: "goed gedaan",
+                                error: false,
+                                autoclose: false
+                            }
                         });
-
-                    ModalService.showModal({
-                        templateUrl: "views/modal.html",
-                        controller: "modalCtrl",
-                        inputs: {
-                            heading: "woord geraden!",
-                            subheading: "goed gedaan",
-                            error: false,
-                            autoclose: false
-                        }
-                    });
+                    } else {
+                        ModalService.showModal({
+                            templateUrl: "views/modal.html",
+                            controller: "modalCtrl",
+                            inputs: {
+                                heading: "code juist!",
+                                subheading: "op naar de volgende",
+                                error: false,
+                                autoclose: true
+                            }
+                        });
+                    }
                 } else {
                     ModalService.showModal({
                         templateUrl: "views/modal.html",
                         controller: "modalCtrl",
                         inputs: {
-                            heading: "code juist!",
+                            heading: "code is al gebruikt!",
                             subheading: "op naar de volgende",
-                            error: false,
+                            error: true,
                             autoclose: true
                         }
                     });

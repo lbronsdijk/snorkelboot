@@ -3,7 +3,7 @@
 
 
 #### De Snorkelboot
-Deze repository bevat de source code van De Snorkelboot. De applicatie is actief onder de volgende URI: [`snorkelboot.amy.lucbronsdijk.nl`](http://snorkelboot.amy.lucbronsdijk.nl/leaderboard).
+Deze repository bevat de source code van De Snorkelboot. De applicatie is actief onder de volgende URI: [`snorkelboot.amy.lucbronsdijk.nl`](http://snorkelboot.amy.lucbronsdijk.nl).
 
 #### Testing
 De game kan stand-alone getest worden zonder daadwerkelijke game setup. De volgende codes kunnen gebruikt worden om de diverse woorden te onthullen:
